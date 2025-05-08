@@ -1,16 +1,13 @@
 import React from "react";
 import { Link } from "react-scroll";
 import "./Sidebar.css";
+import { FaUserCircle } from "react-icons/fa"; // Import avatar icon
 
 function Sidebar() {
   return (
     <div className="sidebar">
       <div className="profile-pic-container">
-        <img
-          src="https://via.placeholder.com/150" // Replace with your image URL
-          // alt="Profile"
-          className="profile-pic"
-        />
+        <FaUserCircle className="profile-icon" /> {/* Avatar icon */}
       </div>
       <h2>My Portfolio</h2>
       <ul>

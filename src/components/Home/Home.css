@@ -1,3 +1,4 @@
+/* Base styles (existing) */
 .home {
   padding: 20px;
   margin-left: 250px; /* Adjust for the sidebar width */
@@ -50,12 +51,8 @@
 
 /* Keyframes for sliding right animation */
 @keyframes slide-right {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 .section {
@@ -116,13 +113,10 @@
 
 /* Bounce animation */
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
+
 /* project css */
 .projects-grid {
   display: grid;
@@ -168,4 +162,66 @@
 
 .project-card a:hover {
   text-decoration: underline;
+}
+
+/* Responsive Styles */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .home {
+    margin-left: 0;
+    padding: 15px;
+  }
+  .home-content {
+    height: auto;
+    padding: 40px;
+  }
+  .home-content h1 {
+    font-size: 2rem;
+  }
+  .section {
+    padding: 40px 15px;
+  }
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .home {
+    padding: 10px;
+  }
+  .home-content {
+    padding: 30px;
+  }
+  .home-content h1 {
+    font-size: 1.8rem;
+    animation-duration: 4s;
+  }
+  .home-content p {
+    font-size: 1rem;
+  }
+  .section {
+    padding: 30px 10px;
+  }
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .home-content {
+    padding: 20px;
+  }
+  .home-content h1 {
+    font-size: 1.5rem;
+    animation-duration: 3s;
+  }
+  .home-content p {
+    font-size: 0.9rem;
+  }
 }

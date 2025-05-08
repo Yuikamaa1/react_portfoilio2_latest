@@ -20,9 +20,11 @@ function Home() {
       <section id="about" className="section">
         <h2>About Me</h2>
         <p>
-          I’m a passionate software developer with a journey that began in 2022. Over the years, 
-          I’ve worked with startups, small businesses, and enterprises to bring innovative ideas 
-          to life through web, mobile, and backend development.
+        <h3>Education</h3>
+
+          I’m a passionate software developer with a journey that began in 2022. 
+          Pursued a Diploma in Software Engineering at KISE College from June 2022 to February 2024, 
+          majoring in Full-Stack Web Development.
         </p>
         <p>
           My mission is to craft impactful digital experiences that not only solve problems but 
@@ -30,15 +32,10 @@ function Home() {
           always excited to take on new challenges and turn visions into reality.
         </p>
         <p>
-          I also served as a Web Development teacher at Ubunifu College, Nairobi, where I mentored 
+          I also served as a Web Development teacher/attachee at Ubunifu College, Nairobi, where I mentored 
           aspiring developers and shared my expertise in building modern web applications.
         </p>
         <p>Let’s build something great together.</p>
-        <h3>Education</h3>
-        <p>
-          Pursued a Diploma in Software Engineering at KISE College from June 2022 to February 2024, 
-          majoring in Full-Stack Web Development.
-        </p>
       </section>
 
       <section id="skills" className="section">
@@ -47,15 +44,15 @@ function Home() {
   <div className="skills-grid">
     <div className="skill-card">
       <strong>Web Development</strong>
-      <p>Building responsive and scalable websites using React, HTML, CSS, and Bootstrap.</p>
+      <p>Building responsive and scalable websites using React, HTML, CSS, js and Bootstrap.</p>
     </div>
     <div className="skill-card">
       <strong>Backend Development</strong>
-      <p>Creating robust server-side applications with Node.js, Express, and Laravel.</p>
+      <p>Creating robust server-side applications with PHP and Laravel.</p>
     </div>
     <div className="skill-card">
       <strong>Mobile App Development</strong>
-      <p>Developing cross-platform mobile apps using React Native and Flutter.</p>
+      <p>Developing cross-platform mobile apps using java.</p>
     </div>
     <div className="skill-card">
       <strong>Web Penetration Testing</strong>
@@ -63,7 +60,7 @@ function Home() {
     </div>
     <div className="skill-card">
       <strong>UI/UX Design</strong>
-      <p>Designing intuitive interfaces with tools like Figma and Adobe XD.</p>
+      <p>Designing intuitive interfaces with tools like Figma.</p>
     </div>
     <div className="skill-card">
       <strong>Project Consulting</strong>

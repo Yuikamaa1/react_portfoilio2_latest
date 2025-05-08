@@ -110,3 +110,86 @@
   font-size: 0.8rem;
   color: #ccc; /* Light gray for footer text */
 }
+/* Existing styles remain the same until the media queries */
+
+/* Tablet Devices (768px - 1024px) */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+    padding: 15px;
+  }
+  .profile-icon {
+    font-size: 80px;
+  }
+  .sidebar h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  .sidebar ul li a {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+}
+
+/* Mobile Devices (up to 768px) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    box-shadow: none;
+    padding: 15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .profile-pic-container {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .sidebar h2 {
+    width: 100%;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  .sidebar ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  .sidebar ul li {
+    margin: 0;
+    width: auto;
+  }
+  .sidebar ul li a {
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 20px;
+  }
+  .sidebar-footer {
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+
+/* Small Mobile Devices (up to 480px) */
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 10px;
+  }
+  .profile-icon {
+    font-size: 60px;
+  }
+  .sidebar h2 {
+    font-size: 1.1rem;
+  }
+  .sidebar ul li a {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+  .sidebar-footer {
+    font-size: 0.7rem;
+  }
+}

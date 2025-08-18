@@ -13,7 +13,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100vh; /* Full viewport height */
+  min-height: 100vh; /* Changed from height */
   border-radius: 10px; /* Optional: Rounded corners */
 }
 
@@ -29,7 +29,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 300px;
+  /* Removed fixed height to allow content to flow naturally */
 }
 
 /* Animation for sliding left to right */
@@ -57,7 +57,7 @@
 
 .section {
   padding: 50px 20px;
-  height: 100vh;
+  min-height: 100vh; /* Changed from height */
   border-bottom: 1px solid gray;
   background-color: black; /* Section background */
 }
@@ -218,7 +218,7 @@
     padding: 20px;
   }
   .home-content h1 {
-    font-size: 1.5rem;
+    font-size: 1.5rem; 
     animation-duration: 3s;
   }
   .home-content p {

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-// Assuming you have a folder named 'assets' in your src directory with the icon files
+// Import your image from the assets folder
+import profilePic from './assets/kamau.png'; 
+// Assuming you have a folder named 'assets' in your src directory with the icon and image files
 import { FaLaptopCode, FaBug, FaDatabase, FaCloud, FaMobileAlt, FaPalette, FaProjectDiagram, FaGitAlt, FaBars, FaBookOpen, FaRocket, FaChalkboardTeacher } from 'react-icons/fa';
 
 function Home() {
@@ -47,6 +49,8 @@ function Home() {
 
       <section id="home" className="section-home">
         <div className="home-content">
+          {/* Add the image tag here */}
+          <img src={profilePic} alt="Brian Kamau" className="profile-thumbnail" />
           <h1>Hi, I'm Brian Kamau</h1>
           <p>
             I am a passionate Web Developer dedicated to building modern, responsive, 
@@ -155,11 +159,26 @@ function Home() {
       </section>
 
       <section id="contact" className="section">
-        <h2>Contact</h2>
-        <p><strong>Phone:</strong> +254711591305</p>
-        <p><strong>Email:</strong> kamaub700@gmail.com</p>
-        <p><strong>Location:</strong> Kikuyu, Kiambu County</p>
-        <p><strong>Open Hours:</strong> 9am - 5pm</p>
+        <h2>Contact Me</h2>
+        <p>Have a question or want to work together? Send me a message!</p>
+        {/* New Contact Form */}
+        <div className="contact-form-container">
+          <form className="contact-form">
+            <div className="form-group">
+              <label htmlFor="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" className="submit-btn">Send Message</button>
+          </form>
+        </div>
       </section>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 // Assuming you have a folder named 'assets' in your src directory with the icon files
-import { FaLaptopCode, FaBug, FaDatabase, FaCloud, FaMobileAlt, FaPalette, FaProjectDiagram, FaGitAlt, FaBars } from 'react-icons/fa';
+import { FaLaptopCode, FaBug, FaDatabase, FaCloud, FaMobileAlt, FaPalette, FaProjectDiagram, FaGitAlt, FaBars, FaBookOpen, FaRocket, FaChalkboardTeacher } from 'react-icons/fa';
 
 function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -46,8 +46,6 @@ function Home() {
       </div>
 
       <section id="home" className="section-home">
-        <h2>Welcome to My Portfolio</h2>
-        
         <div className="home-content">
           <h1>Hi, I'm Brian Kamau</h1>
           <p>
@@ -58,24 +56,33 @@ function Home() {
       </section>
 
       <section id="about" className="section">
-        <h2>About Me</h2>
-        <p>
-        <h3>Education</h3>
-
-          I’m a passionate software developer with a journey that began in 2022. 
-          Pursued a Diploma in Software Engineering at KISE College from June 2022 to February 2024, 
-          majoring in Full-Stack Web Development.
-        </p>
-        <p>
-          My mission is to craft impactful digital experiences that not only solve problems but 
-          also drive growth. With a strong focus on excellence and a love for technology, I’m 
-          always excited to take on new challenges and turn visions into reality.
-        </p>
-        <p>
-          I also served as a Web Development teacher/attachee at Ubunifu College, Nairobi, where I mentored 
-          aspiring developers and shared my expertise in building modern web applications.
-        </p>
-        <p>Let’s build something great together.</p>
+        <div className="about-container">
+          <h2 className="about-title">About Me</h2>
+          <div className="about-card-container">
+            <div className="about-item">
+              <FaBookOpen className="about-icon" />
+              <h3>Education & Background</h3>
+              <p>
+                My journey as a software developer began in 2022. I pursued a Diploma in Software Engineering at KISE College, specializing in Full-Stack Web Development from June 2022 to February 2024.
+              </p>
+            </div>
+            <div className="about-item">
+              <FaRocket className="about-icon" />
+              <h3>My Mission</h3>
+              <p>
+                I am on a mission to craft impactful digital experiences that not only solve problems but also drive growth. With a strong focus on excellence and a love for technology, I am always excited to take on new challenges and turn visions into reality.
+              </p>
+            </div>
+            <div className="about-item">
+              <FaChalkboardTeacher className="about-icon" />
+              <h3>Experience</h3>
+              <p>
+                I have also served as a Web Development teacher/attachee at Ubunifu College, Nairobi, where I mentored aspiring developers and shared my expertise in building modern web applications.
+              </p>
+            </div>
+          </div>
+          <p className="about-call-to-action">Let’s build something great together.</p>
+        </div>
       </section>
 
       <section id="skills" className="section">

@@ -1,6 +1,8 @@
 import React from "react";
 import "./Home.css";
 
+// Assuming you have a folder named 'assets' in your src directory with the icon files
+import { FaLaptopCode, FaBug, FaDatabase, FaCloud, FaMobileAlt, FaPalette, FaProjectDiagram, FaGitAlt } from 'react-icons/fa';
 
 function Home() {
   return (
@@ -39,35 +41,51 @@ function Home() {
       </section>
 
       <section id="skills" className="section">
-  <h2>Skills</h2>
-  <p>Transforming Ideas Into Innovative Digital Solutions</p>
-  <div className="skills-grid">
-    <div className="skill-card">
-      <strong>Web Development</strong>
-      <p>Building responsive and scalable websites using React, HTML, CSS, js and Bootstrap.</p>
-    </div>
-    <div className="skill-card">
-      <strong>Backend Development</strong>
-      <p>Creating robust server-side applications with PHP and Laravel.</p>
-    </div>
-    <div className="skill-card">
-      <strong>Mobile App Development</strong>
-      <p>Developing cross-platform mobile apps using java.</p>
-    </div>
-    <div className="skill-card">
-      <strong>Web Penetration Testing</strong>
-      <p>Conducting security assessments to safeguard applications from threats.</p>
-    </div>
-    <div className="skill-card">
-      <strong>UI/UX Design</strong>
-      <p>Designing intuitive interfaces with tools like Figma.</p>
-    </div>
-    <div className="skill-card">
-      <strong>Project Consulting</strong>
-      <p>Providing tailored advice for software projects and technology stacks.</p>
-    </div>
-  </div>
-</section>
+        <h2>Skills</h2>
+        <p>Transforming Ideas Into Innovative Digital Solutions</p>
+        <div className="skills-grid">
+          <div className="skill-card">
+            <FaCloud className="skill-icon" />
+            <strong>Web Hosting</strong>
+            <p>Hosting my portfolio on Vercel and familiar with cloud platforms like Firebase.</p>
+          </div>
+          <div className="skill-card">
+            <FaBug className="skill-icon" />
+            <strong>Debugging</strong>
+            <p>Proficient in identifying and resolving software bugs to ensure smooth application performance.</p>
+          </div>
+          <div className="skill-card">
+            <FaDatabase className="skill-icon" />
+            <strong>Backend Development</strong>
+            <p>Creating robust server-side applications with PHP, Laravel, and SQL databases.</p>
+          </div>
+          <div className="skill-card">
+            <FaProjectDiagram className="skill-icon" />
+            <strong>API Calls</strong>
+            <p>Experience in creating projects that integrate with APIs, like a weather website using React JS.</p>
+          </div>
+          <div className="skill-card">
+            <FaLaptopCode className="skill-icon" />
+            <strong>Frontend Development</strong>
+            <p>Building interactive user interfaces with HTML, CSS, JavaScript, and React JS.</p>
+          </div>
+          <div className="skill-card">
+            <FaMobileAlt className="skill-icon" />
+            <strong>Responsive Design</strong>
+            <p>Creating responsive website designs that provide an optimal viewing experience on both phone and laptop screens.</p>
+          </div>
+          <div className="skill-card">
+            <FaPalette className="skill-icon" />
+            <strong>UI/UX Design</strong>
+            <p>Designing intuitive and user-friendly interfaces with tools like Figma.</p>
+          </div>
+          <div className="skill-card">
+            <FaGitAlt className="skill-icon" />
+            <strong>Version Control</strong>
+            <p>Using GitHub for version control to manage and host my projects efficiently.</p>
+          </div>
+        </div>
+      </section>
 
       <section id="projects" className="section">
         <h2>Projects</h2>

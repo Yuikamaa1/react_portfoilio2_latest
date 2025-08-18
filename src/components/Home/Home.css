@@ -34,6 +34,17 @@
   border: 1px solid #333; /* A subtle border */
 }
 
+/* NEW: Profile Thumbnail Style */
+.profile-thumbnail {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Prevents the image from stretching */
+  border: 3px solid #00ffcc; /* A border matching your theme */
+  margin-bottom: 20px; /* Adds space between the image and the text */
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.5); /* Adds a nice glow */
+}
+
 /* Animation for sliding left to right */
 .home-content h1 {
   font-size: 2.5rem;
@@ -63,6 +74,7 @@
   min-height: 100vh; /* Changed from height */
   border-bottom: 1px solid gray;
   background-color: black; /* Section background */
+  text-align: center; /* Center section titles and text */
 }
 
 .section h2 {
@@ -271,6 +283,69 @@
   color: #00ffcc;
 }
 
+/* --- NEW CONTACT FORM STYLES --- */
+.contact-form-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-top: 30px;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 600px; /* Limit form width */
+  display: flex;
+  flex-direction: column; /* Stack form elements vertically */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  text-align: left; /* Align labels to the left */
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px; /* Rounded corners */
+  border: 1px solid #444;
+  background-color: #222;
+  color: white;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #00ffcc;
+  box-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+}
+
+.submit-btn {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: black;
+  background-color: #00ffcc;
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #00e6b8;
+  transform: scale(1.02);
+}
+
 /* Responsive Styles */
 
 /* Tablet (max-width: 1024px) */
@@ -324,6 +399,10 @@
   .projects-grid,
   .about-card-container {
     grid-template-columns: 1fr;
+  }
+  .profile-thumbnail {
+    width: 120px; /* Smaller thumbnail on mobile */
+    height: 120px;
   }
 }
 

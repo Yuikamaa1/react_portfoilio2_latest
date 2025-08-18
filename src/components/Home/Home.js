@@ -1,12 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.css";
-
 // Assuming you have a folder named 'assets' in your src directory with the icon files
-import { FaLaptopCode, FaBug, FaDatabase, FaCloud, FaMobileAlt, FaPalette, FaProjectDiagram, FaGitAlt } from 'react-icons/fa';
+import { FaLaptopCode, FaBug, FaDatabase, FaCloud, FaMobileAlt, FaPalette, FaProjectDiagram, FaGitAlt, FaBars } from 'react-icons/fa';
 
 function Home() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isSidebarOpen) {
+        setIsSidebarOpen(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isSidebarOpen]);
+
   return (
     <div className="home">
+      {/* Sidebar button for mobile view */}
+      <button className="sidebar-toggle-button" onClick={toggleSidebar}>
+        <FaBars />
+      </button>
+
+      {/* The Sidebar itself */}
+      <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+        <nav>
+          <ul>
+            <li><a href="#home" onClick={() => setIsSidebarOpen(false)}>Home</a></li>
+            <li><a href="#about" onClick={() => setIsSidebarOpen(false)}>About</a></li>
+            <li><a href="#skills" onClick={() => setIsSidebarOpen(false)}>Skills</a></li>
+            <li><a href="#projects" onClick={() => setIsSidebarOpen(false)}>Projects</a></li>
+            <li><a href="#contact" onClick={() => setIsSidebarOpen(false)}>Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
       <section id="home" className="section-home">
         <h2>Welcome to My Portfolio</h2>
         

@@ -15,13 +15,15 @@
   text-align: center;
   min-height: 100vh; /* Changed from height */
   border-radius: 10px; /* Optional: Rounded corners */
+  /* New radial gradient for a more modern look */
+  background: radial-gradient(circle, #1a1a1a 0%, black 100%);
 }
 
 .home-content {
-  background-color: #464545; /* Dark gray background */
+  background-color: rgba(70, 69, 69, 0.5); /* Semi-transparent dark gray */
   color: white;
   text-align: center;
-  padding: 50px;
+  padding: 60px; /* Slightly more padding */
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -29,7 +31,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* Removed fixed height to allow content to flow naturally */
+  border: 1px solid #333; /* A subtle border */
 }
 
 /* Animation for sliding left to right */
@@ -39,7 +41,8 @@
   white-space: nowrap;
   display: inline-block;
   color: #00ffcc; 
-  animation: slide-right 5s linear infinite;
+  /* Replace the old animation with a new one */
+  animation: fade-in 1.5s ease-out forwards;
 }
 
 .home-content p {
@@ -49,10 +52,10 @@
   max-width: 600px; /* Limit the width of the paragraph */
 }
 
-/* Keyframes for sliding right animation */
-@keyframes slide-right {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+/* Keyframes for a subtle fade-in animation */
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .section {
@@ -213,6 +216,60 @@
   display: none; /* Hide by default */
 }
 
+/* NEW ABOUT SECTION STYLES */
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.about-item {
+  background-color: #222;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  border: 1px solid #333;
+}
+
+.about-item:hover {
+  transform: translateY(-5px);
+}
+
+.about-icon {
+  font-size: 3rem;
+  color: #00ffcc;
+  margin-bottom: 15px;
+}
+
+.about-item h3 {
+  font-size: 1.3rem;
+  color: #00ffcc;
+  margin-bottom: 10px;
+}
+
+.about-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.about-call-to-action {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #00ffcc;
+}
 
 /* Responsive Styles */
 
@@ -264,7 +321,8 @@
     padding: 30px 10px;
   }
   .skills-grid,
-  .projects-grid {
+  .projects-grid,
+  .about-card-container {
     grid-template-columns: 1fr;
   }
 }

@@ -1,74 +1,94 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-import { FaMale } from "react-icons/fa";
+import { FaMale, FaBars } from "react-icons/fa";
 
 // Import your image from the assets folder
 import profilePic from './assets/kamau.png'; 
-// Assuming you have a folder named 'assets' in your src directory with the icon and image files
-import { FaLaptopCode, FaBug, FaDatabase, FaCloud, FaMobileAlt, FaPalette, FaProjectDiagram, FaGitAlt, FaBars, FaBookOpen, FaRocket, FaChalkboardTeacher } from 'react-icons/fa';
+// Additional icon imports omitted for brevity
 
 function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+      // If not mobile, ensure sidebar is open
+      if (window.innerWidth >= 768) {
+        setIsSidebarOpen(true);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Initial check to open sidebar on desktop
+    if (window.innerWidth >= 768) {
+      setIsSidebarOpen(true);
+    }
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // Close sidebar on scroll when in mobile view
+  useEffect(() => {
     const handleScroll = () => {
-      if (isSidebarOpen) {
+      if (isMobile && isSidebarOpen) {
         setIsSidebarOpen(false);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
 
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [isSidebarOpen]);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isSidebarOpen, isMobile]);
 
   return (
     <div className="home">
-      {/* Sidebar button for mobile view */}
-      <button className="sidebar-toggle-button" onClick={toggleSidebar}>
-        <FaBars />
-      </button>
+      {/* Sidebar button for mobile view only */}
+      {isMobile && (
+        <button className="sidebar-toggle-button" onClick={toggleSidebar}>
+          <FaBars />
+        </button>
+      )}
 
-      {/* The Sidebar itself */}
+      {/* The Sidebar itself - always open on desktop */}
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
         <nav>
           <ul>
-            <li><a href="#home" onClick={() => setIsSidebarOpen(false)}>Home</a></li>
-            <li><a href="#about" onClick={() => setIsSidebarOpen(false)}>About</a></li>
-            <li><a href="#skills" onClick={() => setIsSidebarOpen(false)}>Skills</a></li>
-            <li><a href="#projects" onClick={() => setIsSidebarOpen(false)}>Projects</a></li>
-            <li><a href="#contact" onClick={() => setIsSidebarOpen(false)}>Contact</a></li>
+            <li><a href="#home" onClick={() => isMobile && setIsSidebarOpen(false)}>Home</a></li>
+            <li><a href="#about" onClick={() => isMobile && setIsSidebarOpen(false)}>About</a></li>
+            <li><a href="#skills" onClick={() => isMobile && setIsSidebarOpen(false)}>Skills</a></li>
+            <li><a href="#projects" onClick={() => isMobile && setIsSidebarOpen(false)}>Projects</a></li>
+            <li><a href="#contact" onClick={() => isMobile && setIsSidebarOpen(false)}>Contact</a></li>
           </ul>
         </nav>
       </div>
 
       <section id="home" className="section-home">
         <div className="home-content">
-          // {/* Add the image tag here */}
-          // <img src={profilePic} alt="Brian Kamau" className="profile-thumbnail" />
-           <span
-                  style={{
-                    display: "inline-block",
-                    width: "120px",
-                    height: "120px",
-                    borderRadius: "50%",
-                    background: "#e0e0e0",
-                    border: "3px solid #4a90e2",
-                    marginBottom: "20px",
-                    overflow: "hidden",
-                    textAlign: "center",
-                    lineHeight: "120px",
-                  }}
-                >
-                  <FaMale size={80} color="#4a90e2" style={{ verticalAlign: "middle" }} />
-                </span>
+          {/* Display fallback icon for profile picture */}
+          <span
+            style={{
+              display: "inline-block",
+              width: "120px",
+              height: "120px",
+              borderRadius: "50%",
+              background: "#e0e0e0",
+              border: "3px solid #4a90e2",
+              marginBottom: "20px",
+              overflow: "hidden",
+              textAlign: "center",
+              lineHeight: "120px",
+            }}
+          >
+            <FaMale size={80} color="#4a90e2" style={{ verticalAlign: "middle" }} />
+          </span>
           <h1>Hi, I'm Brian Kamau</h1>
           <p>
             I am a passionate Web Developer dedicated to building modern, responsive, 

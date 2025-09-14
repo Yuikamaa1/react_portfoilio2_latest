@@ -9,12 +9,12 @@ import profilePic from './assets/kamau.png';
 
   return (
     <div className="home">
-      {/* Sidebar toggle button shown only on mobile */}
-      {isMobile && (
-        <button className="sidebar-toggle-button" onClick={toggleSidebar}>
-          <FaBars />
-        </button>
-      )}
+      // {/* Sidebar toggle button shown only on mobile */}
+      // {isMobile && (
+      //   <button className="sidebar-toggle-button" onClick={toggleSidebar}>
+      //     <FaBars />
+      //   </button>
+      // )}
 
       {/* Sidebar is always open on desktop, and conditionally open on mobile */}
       <div className={`sidebar ${sidebarClass}`}>

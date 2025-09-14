@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
+import { FaMale } from "react-icons/fa";
+
 // Import your image from the assets folder
 import profilePic from './assets/kamau.png'; 
 // Assuming you have a folder named 'assets' in your src directory with the icon and image files
@@ -49,8 +51,24 @@ function Home() {
 
       <section id="home" className="section-home">
         <div className="home-content">
-          {/* Add the image tag here */}
-          <img src={profilePic} alt="Brian Kamau" className="profile-thumbnail" />
+          // {/* Add the image tag here */}
+          // <img src={profilePic} alt="Brian Kamau" className="profile-thumbnail" />
+           <span
+                  style={{
+                    display: "inline-block",
+                    width: "120px",
+                    height: "120px",
+                    borderRadius: "50%",
+                    background: "#e0e0e0",
+                    border: "3px solid #4a90e2",
+                    marginBottom: "20px",
+                    overflow: "hidden",
+                    textAlign: "center",
+                    lineHeight: "120px",
+                  }}
+                >
+                  <FaMale size={80} color="#4a90e2" style={{ verticalAlign: "middle" }} />
+                </span>
           <h1>Hi, I'm Brian Kamau</h1>
           <p>
             I am a passionate Web Developer dedicated to building modern, responsive, 

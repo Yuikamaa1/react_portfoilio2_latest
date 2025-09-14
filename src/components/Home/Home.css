@@ -1,9 +1,10 @@
 /* Base styles (existing) */
 .home {
-  padding: 20px;
+/*   padding: 20px; */
 /*   margin-left: 250px; /* Adjust for the sidebar width */ */
   background-color: black; /* Page background */
   color: grey;
+  width: 85%;
   min-height: 100vh;
 }
 

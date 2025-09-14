@@ -3,7 +3,7 @@ import "./Home.css";
 import { FaMale, FaBars } from "react-icons/fa";
 
 // Import your image from the assets folder
-import profilePic from './assets/kamau.png'; 
+// import profilePic from './assets/kamau.png'; 
 // (Additional icon imports omitted for brevity)
 
 

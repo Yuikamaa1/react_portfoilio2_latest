@@ -424,26 +424,19 @@
 .sidebar.open {
   transform: translateX(0);
 }
-
-/* --- Media query for desktop screens --- */
 @media (min-width: 768px) {
+  /* On desktop, make the sidebar always visible and give it a fixed width */
   .sidebar {
-    /* On desktop, make the sidebar always visible */
     transform: translateX(0);
-    /* Set a specific width for the desktop sidebar */
     width: 250px;
   }
-}
 
-/* Styles for the main content to move it to the right on desktop */
-@media (min-width: 768px) {
+  /* Adjust main content's margin to prevent it from being covered by the sidebar */
   .section-home {
-    margin-left: 250px; /* Adjust this to match the sidebar's width */
+    margin-left: 250px;
   }
-}
 
-/* Hide the toggle button on desktop */
-@media (min-width: 768px) {
+  /* Hide the menu toggle button on desktop */
   .sidebar-toggle-button {
     display: none;
   }

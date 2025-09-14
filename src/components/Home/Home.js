@@ -6,50 +6,6 @@ import { FaMale, FaBars } from "react-icons/fa";
 import profilePic from './assets/kamau.png'; 
 // (Additional icon imports omitted for brevity)
 
-function Home() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-      // On desktop, force sidebar to be open
-      if (window.innerWidth >= 768) {
-        setIsSidebarOpen(true);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    // Initial check for desktop
-    if (window.innerWidth >= 768) {
-      setIsSidebarOpen(true);
-    }
-    
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  // Close sidebar on scroll when in mobile view
-  useEffect(() => {
-    const handleScroll = () => {
-      if (isMobile && isSidebarOpen) {
-        setIsSidebarOpen(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isSidebarOpen, isMobile]);
-
-  // On desktop, always add the 'open' class to display the sidebar.
-  const sidebarClass = isMobile ? (isSidebarOpen ? "open" : "") : "open";
 
   return (
     <div className="home">

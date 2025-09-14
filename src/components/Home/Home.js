@@ -4,7 +4,7 @@ import { FaMale, FaBars } from "react-icons/fa";
 
 // Import your image from the assets folder
 import profilePic from './assets/kamau.png'; 
-// Additional icon imports omitted for brevity
+// (Additional icon imports omitted for brevity)
 
 function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -17,7 +17,7 @@ function Home() {
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
-      // If not mobile, ensure sidebar is open
+      // On desktop, force sidebar to be open
       if (window.innerWidth >= 768) {
         setIsSidebarOpen(true);
       }
@@ -25,7 +25,7 @@ function Home() {
 
     window.addEventListener('resize', handleResize);
 
-    // Initial check to open sidebar on desktop
+    // Initial check for desktop
     if (window.innerWidth >= 768) {
       setIsSidebarOpen(true);
     }
@@ -48,31 +48,44 @@ function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isSidebarOpen, isMobile]);
 
+  // On desktop, always add the 'open' class to display the sidebar.
+  const sidebarClass = isMobile ? (isSidebarOpen ? "open" : "") : "open";
+
   return (
     <div className="home">
-      {/* Sidebar button for mobile view only */}
+      {/* Sidebar toggle button shown only on mobile */}
       {isMobile && (
         <button className="sidebar-toggle-button" onClick={toggleSidebar}>
           <FaBars />
         </button>
       )}
 
-      {/* The Sidebar itself - always open on desktop */}
-      <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+      {/* Sidebar is always open on desktop, and conditionally open on mobile */}
+      <div className={`sidebar ${sidebarClass}`}>
         <nav>
           <ul>
-            <li><a href="#home" onClick={() => isMobile && setIsSidebarOpen(false)}>Home</a></li>
-            <li><a href="#about" onClick={() => isMobile && setIsSidebarOpen(false)}>About</a></li>
-            <li><a href="#skills" onClick={() => isMobile && setIsSidebarOpen(false)}>Skills</a></li>
-            <li><a href="#projects" onClick={() => isMobile && setIsSidebarOpen(false)}>Projects</a></li>
-            <li><a href="#contact" onClick={() => isMobile && setIsSidebarOpen(false)}>Contact</a></li>
+            <li>
+              <a href="#home" onClick={() => isMobile && setIsSidebarOpen(false)}>Home</a>
+            </li>
+            <li>
+              <a href="#about" onClick={() => isMobile && setIsSidebarOpen(false)}>About</a>
+            </li>
+            <li>
+              <a href="#skills" onClick={() => isMobile && setIsSidebarOpen(false)}>Skills</a>
+            </li>
+            <li>
+              <a href="#projects" onClick={() => isMobile && setIsSidebarOpen(false)}>Projects</a>
+            </li>
+            <li>
+              <a href="#contact" onClick={() => isMobile && setIsSidebarOpen(false)}>Contact</a>
+            </li>
           </ul>
         </nav>
       </div>
 
       <section id="home" className="section-home">
         <div className="home-content">
-          {/* Display fallback icon for profile picture */}
+          {/* Display person icon as the profile picture */}
           <span
             style={{
               display: "inline-block",
